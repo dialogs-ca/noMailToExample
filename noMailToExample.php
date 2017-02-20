@@ -1,6 +1,6 @@
 <?php
 /**
- * noMailToExample : just don't send email to example.net, example.org or example.com
+ * noMailToExample : just don't send email to example.org or example.com
  * http://example.org/ is a great tool for demonstration and test, but sending an email to user@example.org: you receive 4 hour after a notification
  * This plugin just disable sending email to this website, then you can use it when testing syste.
  *
@@ -14,7 +14,7 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * The MIT License
  */
-class noMailToExample extends PluginBase
+class noMailToExample extends \ls\pluginmanager\PluginBase
 {
     static protected $description = 'Don\t send email to example.(com|org)';
     static protected $name = 'noMailToExample';
