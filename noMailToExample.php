@@ -30,6 +30,44 @@ class noMailToExample extends \ls\pluginmanager\PluginBase
      */
     public function beforeTokenEmail()
     {
+        // TODO not in the plugin
+        /* Quick sytem to log email */
+        $aToken=$this->event->get("token");
+        if($aToken){
+            $sLog='beforeTokenEmail for '.$this->event->get("survey");
+            $sLog.=',';
+            $sLog.=isset($aToken['tid']) ? $aToken['tid'] : "notset";
+            if(Yii::app() instanceof CConsoleApplication) {
+                $sLog.=',console';
+            } else {
+                $sLog.=','.Yii::app()->session['loginID'];
+            }
+            $sLog.=',';
+            $sLog.=isset($aToken['participant_id']) ? $aToken['participant_id'] : "notset";
+            $sLog.=',';
+            $sLog.=$this->event->get("type");
+            $sLog.=',';
+            $sLog.=isset($aToken['email']) ? $aToken['email'] : "notset";
+            if(Yii::app() instanceof CConsoleApplication) {
+                $sLog.=',console';
+                $sLog.=',console';
+            } else {
+                if(Yii::app()->getController()) {
+                    $sLog.=','. Yii::app()->getController()->getId();
+                    if(Yii::app()->getController()->getAction()) {
+                        $sLog.=','. Yii::app()->getController()->getAction()->getId();
+                    } else {
+                        $sLog.=',notset';
+                    }
+                } else {
+                    $sLog.=',notset';
+                    $sLog.=',notset';
+                }
+            }
+            Yii::log($sLog, 'info','application.plugins.noMailToExample');
+        }
+        // END
+
         $emailTos=$this->event->get("to");
         /* @var string[] no example.(org|com) from the list */
         $cleanedEmailTos=array();
