@@ -1,0 +1,15 @@
+{
+    "name": "SondagesPro/noMailToExample",
+    "description": "Just don't send email to example.org or example.com. Testing purpose of plugins for example.",
+    "type": "limesurvey-plugin",
+    "homepage": "https://github.com/SondagesPro/noMailToExample",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Denis Chenu",
+            "email": "contact@sondages.pro"
+        }
+    ],
+    "minimum-stability": "alpha",
+    "require": {}
+}

@@ -7,7 +7,7 @@
  * @author Denis Chenu <denis@sondages.pro>
  * @copyright 2016 Denis Chenu <http://www.sondages.pro>
  * @license MIT
- * @version 0.0.1
+ * @version 0.0.2
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
